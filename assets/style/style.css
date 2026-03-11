@@ -74,6 +74,10 @@ body{
     border-radius: 20px;
 }
 .shoppingCart{
+    width: auto;
+    height: auto;
+}
+.shoppingCart i{
     width: 40px;
     height: 40px;
     display: flex;
@@ -85,48 +89,85 @@ body{
     cursor: pointer;
     position: relative;
     transition: all .3s ease-in-out;
-}
-.shoppingCart:hover{
-    background-color: #c9a227;
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
 }
 .shoppingCart:hover i{
     color: white;
+    background-color: #c9a227;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.5);
 }
-.shoppingCart:active .shoppingList{
+.shoppingCart i.active{
+    background-color: #c9a227;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.shoppingList.active{
     display: flex;
 }
 .shoppingList{
     position: absolute;
-    top: 45px;
-    right: 0;
+    top: 60px;
+    right: 10px;
     background-color: #573833;
     padding: .5rem;
-    width: 200px;
+    width: auto;
+    min-width: 200px;
+    padding: .5rem;
     background-color: var(--shopping-cart-items-bg);
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 1.2rem;
     border-radius: 5px;
+}
+.shoppingList:hover i{
+    background-color: var(--background-color);
+    color: black;
+    box-shadow: none;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.5);
+}
+.items{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.item i{
+    color: black;
+    box-shadow: none;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.5);
+    transition: all .3s ease-in-out;
+}
+.item i:hover{
+    background-color: var(--cta-color);
+    color: white;
 }
 .shoppingLabel{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: .8rem;
     position: relative;
+    margin-top: 10px;
 }
 .shoppingLabel::after{
     position: absolute;
     bottom: -2px;
-    left: -20%;
-    width: 140%;
+    left: -10%;
+    width: 120%;
     height: 1px;
     content: "";
     background-color: var(--text-color);
-}
-.shoppingCart i{
-    font-size: 14px;
 }
